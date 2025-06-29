@@ -22,7 +22,7 @@ export default function Page(props) {
             <a href="/bitacora2/projects" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Projects
             </a>
-            <a href="/bitacora2/markdown-page" className="text-sm font-medium hover:text-blue-600 transition-colors">
+            <a href="/bitacora2/bitacora" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Bitacora
             </a>
             <a href="/bitacora2/resume" className="text-sm font-medium hover:text-blue-600 transition-colors">
@@ -37,7 +37,6 @@ export default function Page(props) {
       </header>
 
 
-            
         {props.children}
 
     </div>

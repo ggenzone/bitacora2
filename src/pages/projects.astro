@@ -1,19 +1,58 @@
 ---
 import '../styles/global.css';
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 import PageLayout from '../layouts/page.astro';
 ---
  
 <PageLayout>
-	<div class="flex flex-1 flex-col gap-4 p-4">
-		<div class="grid auto-rows-min gap-4 md:grid-cols-3">
-		<div class="bg-muted/50 aspect-video rounded-xl" />
-		<div class="bg-muted/50 aspect-video rounded-xl" />
-		<div class="bg-muted/50 aspect-video rounded-xl" />
-		</div>
-		<div class="bg-muted/50 min-h-[100vh] flex-1 rounded-xl md:min-h-min" >
-		<h1>Hola</h1>
-		<Button>c</Button>
-		</div>
-	</div>
+    <section id="features" class="py-20 md:py-32">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="text-center space-y-4 mb-16">
+            <Badge variant="secondary" class="w-fit mx-auto">
+              Games
+            </Badge>
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+              Everything you need to succeed
+            </h2>
+            <p class="text-xl text-muted-foreground max-w-[800px] mx-auto">
+              Powerful features designed to help teams collaborate better and deliver exceptional results.
+            </p>
+          </div>
+        <div class="flex flex-1 flex-col gap-4 p-4">
+                <div class="grid auto-rows-min gap-4 md:grid-cols-3">
+                    <div class="bg-muted/50 aspect-video rounded-xl" />
+                    <div class="bg-muted/50 aspect-video rounded-xl" />
+                    <div class="bg-muted/50 aspect-video rounded-xl" />
+                </div>
+	        </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-20 md:py-32">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center space-y-4 mb-16">
+                <Badge variant="secondary" class="w-fit mx-auto">
+                Finances
+                </Badge>
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+                Everything you need to succeed
+                </h2>
+                <p class="text-xl text-muted-foreground max-w-[800px] mx-auto">
+                Powerful features designed to help teams collaborate better and deliver exceptional results.
+                </p>
+            </div>
+
+          	<div class="flex flex-1 flex-col gap-4 p-4">
+                <div class="grid auto-rows-min gap-4 md:grid-cols-3">
+                    <div class="bg-muted/50 aspect-video rounded-xl" />
+                    <div class="bg-muted/50 aspect-video rounded-xl" />
+                    <div class="bg-muted/50 aspect-video rounded-xl" />
+                </div>
+	        </div>
+        </div>
+    </section>
+
+
+
 </PageLayout>

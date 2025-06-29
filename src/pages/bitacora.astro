@@ -1,19 +1,49 @@
 ---
 import '../styles/global.css';
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 import PageLayout from '../layouts/page.astro';
+import { Image } from 'astro:assets';
+import perspecticaImage from '../assets/img/perspectiva.png';
+import prototipoImage from '../assets/img/prototipo.png';
+import decadenciaImage from '../assets/img/decadencia.png';
+import herbrandImage from '../assets/img/herbrand.png';
 ---
  
 <PageLayout>
-	<div class="flex flex-1 flex-col gap-4 p-4">
-		<div class="grid auto-rows-min gap-4 md:grid-cols-3">
-		<div class="bg-muted/50 aspect-video rounded-xl" />
-		<div class="bg-muted/50 aspect-video rounded-xl" />
-		<div class="bg-muted/50 aspect-video rounded-xl" />
-		</div>
-		<div class="bg-muted/50 min-h-[100vh] flex-1 rounded-xl md:min-h-min" >
-		<h1>Hola</h1>
-		<Button>c</Button>
-		</div>
-	</div>
+    <section class="py-20 md:py-32">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="text-center space-y-4 mb-16">
+            <Badge variant="secondary" class="w-fit mx-auto">
+              Bitácoras
+            </Badge>
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+              Explora mis cuadernos de aprendizaje
+            </h2>
+            <p class="text-xl text-muted-foreground max-w-[800px] mx-auto">
+              Bitácoras personales donde documento mi proceso de aprendizaje en finanzas, electrónica, música y matemáticas, utilizando IA como herramienta de exploración y descubrimiento.
+            </p>
+          </div>
+        <div class="flex flex-1 flex-col gap-4 p-4">
+                <div class="grid auto-rows-min gap-4 md:grid-cols-2">
+                    <a href="/bitacora2/perspectiva" class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative">
+                    <Image src={perspecticaImage} alt="Perspectiva" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition" />
+                    <span class="absolute bottom-4 left-4 text-lg font-semibold text-white drop-shadow">Perspectiva</span>
+                    </a>
+                    <a href="/bitacora2/markdown-page" class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative">
+                    <Image src={prototipoImage} alt="Prototipo" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition" />
+                    <span class="absolute bottom-4 left-4 text-lg font-semibold text-white drop-shadow">Prototipo</span>
+                    </a>
+                    <a href="/decadencia" class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative">
+                    <Image src={decadenciaImage} alt="Decadencia" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition" />
+                    <span class="absolute bottom-4 left-4 text-lg font-semibold text-white drop-shadow">Decadencia</span>
+                    </a>
+                    <a href="/herbrand" class="block bg-muted/50 aspect-video rounded-xl overflow-hidden group relative">
+                    <Image src={herbrandImage} alt="Herbrand" class="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition" />
+                    <span class="absolute bottom-4 left-4 text-lg font-semibold text-white drop-shadow">Herbrand</span>
+                    </a>
+                </div>
+	        </div>
+        </div>
+    </section>
 </PageLayout>
