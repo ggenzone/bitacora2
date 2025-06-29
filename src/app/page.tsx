@@ -23,7 +23,10 @@ export default function Page(props) {
               Projects
             </a>
             <a href="/bitacora2/bitacora" className="text-sm font-medium hover:text-blue-600 transition-colors">
-              Bitacora
+              Cuadernos
+            </a>
+            <a href="/bitacora2/resources" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              Resources
             </a>
             <a href="/bitacora2/resume" className="text-sm font-medium hover:text-blue-600 transition-colors">
               About

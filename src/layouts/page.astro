@@ -6,10 +6,12 @@ import ThemeIcon from '../components/theme-icon.astro';
 
 // if you want to use the sidebar cookie
 const defaultSidebarOpen = Astro.cookies.get('sidebar:state')?.value === 'true';
+const { title } = Astro.props
 ---
 
-<MainLayout>
+
+<MainLayout title={title} >
     <Page client:load defaultSidebarOpen={defaultSidebarOpen}>
-    <slot>
+        <slot>
     </Page>
 </MainLayout>

@@ -3,9 +3,11 @@ import '../styles/global.css';
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import PageLayout from '../layouts/page.astro';
+
+const pageTitle = 'Projects';
 ---
- 
-<PageLayout>
+
+<PageLayout title={pageTitle}>
     <section id="features" class="py-20 md:py-32">
         <div class="container mx-auto px-4 md:px-6">
           <div class="text-center space-y-4 mb-16">
