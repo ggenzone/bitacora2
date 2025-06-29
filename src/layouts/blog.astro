@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import Page from "../app/page.tsx"
+import Blog from "../app/blog.tsx"
 import MainLayout from './main.astro';
 import ThemeIcon from '../components/theme-icon.astro';
 
@@ -9,7 +9,7 @@ const defaultSidebarOpen = Astro.cookies.get('sidebar:state')?.value === 'true';
 ---
 
 <MainLayout>
-    <Page client:load defaultSidebarOpen={defaultSidebarOpen}>
+    <Blog client:load defaultSidebarOpen={defaultSidebarOpen}>
         <div class="mx-auto grid w-full max-w-2xl grid-cols-1 gap-10 xl:max-w-5xl xl:grid-cols-[minmax(0,1fr)_var(--container-2xs)]">
           
           

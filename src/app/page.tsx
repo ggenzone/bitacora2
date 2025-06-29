@@ -1,26 +1,45 @@
-import { AppSidebar } from "@/components/app-sidebar"
-import { SiteHeader } from "@/components/site-header"
-import {
-  SidebarInset,
-  SidebarProvider,
-} from "@/components/ui/sidebar"
-
-export const iframeHeight = "800px"
-
-export const description = "A sidebar with a header and a search form."
 
 export default function Page(props) {
   return (
-    <div className="[--header-height:calc(--spacing(14))]">
-      <SidebarProvider className="flex flex-col">
-        <SiteHeader />
-        <div className="flex flex-1">
-          <AppSidebar />
-          <SidebarInset>
-            {props.children}
-          </SidebarInset>
+    <div className="min-h-screen bg-baground text-foreground ">
+      <header className="sticky top-0 z-50 w-full border-b bg-sidebar text-sidebar-foreground  print:hidden">
+        <div className="flex h-16 items-center justify-between px-4 md:px-6">
+          <div className="flex items-center space-x-2">
+            {/**
+             * 
+
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600">
+              <Zap className="h-5 w-5 text-white" />
+            </div>
+            <span className="text-xl font-bold">StreamLine</span>
+            */}
+          </div>
+
+          <nav className="hidden md:flex items-center space-x-8">
+            <a href="/bitacora2/about" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              Home
+            </a>
+            <a href="/bitacora2/projects" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              Projects
+            </a>
+            <a href="/bitacora2/markdown-page" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              Bitacora
+            </a>
+            <a href="/bitacora2/resume" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              About
+            </a>
+          </nav>
+
+          <div className="flex items-center space-x-4">
+
+          </div>
         </div>
-      </SidebarProvider>
+      </header>
+
+
+            
+        {props.children}
+
     </div>
   )
 }
