@@ -1,0 +1,13 @@
+---
+import '../styles/global.css';
+import Page from "../app/page.tsx"
+import MainLayout from './main.astro';
+import ThemeIcon from '../components/theme-icon.astro';
+
+// if you want to use the sidebar cookie
+const defaultSidebarOpen = Astro.cookies.get('sidebar:state')?.value === 'true';
+---
+
+<MainLayout>
+    <slot>
+</MainLayout>
