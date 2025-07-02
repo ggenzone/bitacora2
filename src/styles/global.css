@@ -2,9 +2,15 @@
 @import "tw-animate-css";
 @plugin '@tailwindcss/typography';
 
+/*
 article.prose {
     font-family: "Source Sans Pro","Microsoft Yahei",sans-serif;
+}*/
+
+div.blog {
+  font-family: "Inter", "Source Sans Pro", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
 }
+
 
 @custom-variant dark (&:is(.dark *));
 

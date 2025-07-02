@@ -16,14 +16,15 @@ export default function Page(props) {
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="/bitacora2/about" className="text-sm font-medium hover:text-blue-600 transition-colors">
+            <a href="/bitacora2" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Home
             </a>
-            {/*
-            <a href="/bitacora2/projects" className="text-sm font-medium hover:text-blue-600 transition-colors">
-              Projects
+            <a href="/bitacora2/resume" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              About
             </a>
-            */}
+            <a href="/bitacora2/repos" className="text-sm font-medium hover:text-blue-600 transition-colors">
+              Repos
+            </a>
             <a href="/bitacora2/bitacora" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Cuadernos
             </a>
@@ -32,9 +33,7 @@ export default function Page(props) {
               Resources
             </a>
             */}
-            <a href="/bitacora2/resume" className="text-sm font-medium hover:text-blue-600 transition-colors">
-              About
-            </a>
+
 
           </nav>
 

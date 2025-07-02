@@ -23,6 +23,7 @@ const displayDate = (date) => {
 ---
 
 <MainLayout title={blog.title}>
+<div class="blog">
     <BlogPage client:load defaultSidebarOpen={defaultSidebarOpen} blog={blog}>
         <div class="mx-auto grid w-full max-w-2xl grid-cols-1 gap-10 xl:max-w-6xl xl:grid-cols-[minmax(0,1fr)_var(--container-2xs)]">
             <div class="p-4 pt-10 pb-24 sm:px-6 xl:pr-0 bg-sidebar text-sidebar-foreground">
@@ -65,4 +66,5 @@ const displayDate = (date) => {
       </div>
 
     </Page>
+    </div>
 </MainLayout>
