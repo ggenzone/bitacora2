@@ -1,8 +1,12 @@
 ---
-title: 'Markdown + Tailwind'
-layout: ../layouts/blog.astro
+title: "Lambda Cálculo: Fundamentos y Aplicaciones"
+date: 2025-04-05
+categories: [matemáticas, computación teórica]
+tags: [lambda cálculo, lógica, computación, álgebra]
+image:
+  path: ../../assets/img/posts/bretton-woods-header.png
+  alt: Representación del Lambda Cálculo
 ---
-
 
 ## Introducción
 

@@ -1,21 +1,20 @@
 import { AppSidebar } from "@/components/app-sidebar"
 import { SiteHeader } from "@/components/site-header"
+import { type Blog } from "@/data/blog"
+import { type ReactNode } from "react"
 import {
   SidebarInset,
   SidebarProvider,
 } from "@/components/ui/sidebar"
 
-export const iframeHeight = "800px"
-
-export const description = "A sidebar with a header and a search form."
-
-export default function Blog(props) {
+export default function BlogPage(props : { blog: Blog, children: ReactNode }) {
+  console.log("BlogPage props", props.blog)
   return (
     <div className="[--header-height:calc(--spacing(14))]">
       <SidebarProvider className="flex flex-col">
         <SiteHeader />
         <div className="flex flex-1">
-          <AppSidebar />
+          <AppSidebar blog={props.blog} />
           <SidebarInset>
             {props.children}
           </SidebarInset>

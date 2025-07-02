@@ -1,41 +1,19 @@
 ---
 import '../styles/global.css';
-import Blog from "../app/blog.tsx"
+import BlogPage from "../app/blog.tsx"
+import type { Blog } from '../data/blog';
 import MainLayout from './main.astro';
 import ThemeIcon from '../components/theme-icon.astro';
 
 // if you want to use the sidebar cookie
 const defaultSidebarOpen = Astro.cookies.get('sidebar:state')?.value === 'true';
+const { blog } = Astro.props as MarkdownLayoutProps & { blog: Blog };
 ---
 
-<MainLayout title={`Blog`}>
-    <Blog client:load defaultSidebarOpen={defaultSidebarOpen}>
+<MainLayout title={blog.title}>
+    <BlogPage client:load defaultSidebarOpen={defaultSidebarOpen} blog={blog}>
         <div class="mx-auto grid w-full max-w-2xl grid-cols-1 gap-10 xl:max-w-5xl xl:grid-cols-[minmax(0,1fr)_var(--container-2xs)]">
-          
-          
-          <div class="px-4 pt-10 pb-24 sm:px-6 xl:pr-0 bg-sidebar text-sidebar-foreground">
-            <article class="
-                prose 
-                dark:prose-invert 
-                
-                max-w-none
-                
-                prose-sm
-                prose-h1:font-bold 
-                prose-h1:text-xl
-
-                prose-headings:tracking-tight
-                prose-headings:font-medium
-
-                prose-headings:text-gray-950 
-                dark:prose-headings:text-white
-
-                prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl
-            ">
-                <slot>
-            </article>
-          </div>
-      </div>
-
+            <slot>
+        </div>
     </Page>
 </MainLayout>

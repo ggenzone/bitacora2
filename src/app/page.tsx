@@ -19,18 +19,23 @@ export default function Page(props) {
             <a href="/bitacora2/about" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Home
             </a>
+            {/*
             <a href="/bitacora2/projects" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Projects
             </a>
+            */}
             <a href="/bitacora2/bitacora" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Cuadernos
             </a>
+            {/*
             <a href="/bitacora2/resources" className="text-sm font-medium hover:text-blue-600 transition-colors">
               Resources
             </a>
+            */}
             <a href="/bitacora2/resume" className="text-sm font-medium hover:text-blue-600 transition-colors">
               About
             </a>
+
           </nav>
 
           <div className="flex items-center space-x-4">

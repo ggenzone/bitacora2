@@ -1,5 +1,6 @@
 import * as React from "react"
 import {
+  ArrowLeftIcon,
   BookOpen,
   Bot,
   Command,
@@ -12,6 +13,7 @@ import {
   SquareTerminal,
 } from "lucide-react"
 
+import { NavBlog } from "@/components/nav-blog"
 import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects"
 import { NavSecondary } from "@/components/nav-secondary"
@@ -26,6 +28,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import type { Blog } from "@/data/blog"
 
 const data = {
   user: {
@@ -151,7 +154,7 @@ const data = {
   ],
 }
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export function AppSidebar({ blog, ...props  }: { blog: Blog } & React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar
       className="top-(--header-height) h-[calc(100svh-var(--header-height))]!"
@@ -163,11 +166,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarMenuButton size="lg" asChild>
               <a href="#">
                 <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-                  <Command className="size-4" />
+                  <BookOpen className="size-4" />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-medium">Acme Inc</span>
-                  <span className="truncate text-xs">Enterprise</span>
+                  <span className="truncate font-medium">{blog.title}</span>
+                  <span className="truncate text-xs">{blog.description}</span>
                 </div>
               </a>
             </SidebarMenuButton>
@@ -175,13 +178,19 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
+        <NavBlog menu={blog.menu} />
       </SidebarContent>
       <SidebarFooter>
-        <ThemeToggle />
-        <NavUser user={data.user} />
+          <ThemeToggle />
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild>
+              <a href={'/bitacora2/bitacora'}>
+                <ArrowLeftIcon className="w-4 h-4 mr-2" />
+                <span>Volder</span>
+              </a>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+
       </SidebarFooter>
     </Sidebar>
   )
