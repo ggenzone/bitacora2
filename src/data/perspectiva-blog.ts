@@ -16,7 +16,7 @@ export const blog: Blog = {
       },
       {
           name: "Tags",
-          url: "/bitacora/tags",
+          url: "/bitacora2/perspectiva/tags",
           icon: HomeIcon,
       },
       {
