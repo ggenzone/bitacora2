@@ -5,6 +5,7 @@ import { latestPosts } from "../../../lib/content";
 import { collections } from "../../../content/config.ts"
 import { blog } from '../../../data/perspectiva-blog.ts';
 
+const { url  } = Astro.props;
 const allPosts = await latestPosts("perspectiva");
 
 const tags = [...new Set(allPosts.map((post: any) => post.data.tags).flat())];
@@ -13,7 +14,7 @@ const pageTitle = "Tag Index";
 const meta = {
   title: pageTitle,
   description: "Descripción breve del artículo.",
-  url: "https://ggenzone.github.io/bitacora2/posts/ejemplo/",
+  url: url.href,
   image: "https://ggenzone.github.io/bitacora2/posts/ejemplo/cover.png",
   type: "article",
   siteName: "Guido Genzone",

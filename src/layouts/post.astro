@@ -5,10 +5,11 @@ import type { Blog } from '../data/blog';
 import MainLayout from './main.astro';
 import ThemeIcon from '../components/astro/theme-icon.astro';
 import { Image } from 'astro:assets';
+import { baseUrl } from '@/config/site';
 
 // if you want to use the sidebar cookie
 const defaultSidebarOpen = Astro.cookies.get('sidebar:state')?.value === 'true';
-const { blog, frontmatter} = Astro.props as MarkdownLayoutProps & { blog: Blog };
+const { blog, frontmatter } = Astro.props as MarkdownLayoutProps & { blog: Blog };
 
 const displayDate = (date) => {
     return (
@@ -22,16 +23,15 @@ const displayDate = (date) => {
 }
 
 const meta = {
-  title: blog.title,
-  description: "Descripción breve del artículo.",
-  url: "https://ggenzone.github.io/bitacora2/posts/ejemplo/",
-  image: "https://ggenzone.github.io/bitacora2/posts/ejemplo/cover.png",
+  title: frontmatter.title,
+  description: frontmatter.description,
+  //image: "https://ggenzone.github.io/bitacora2/posts/ejemplo/cover.png",
   type: "article",
-  siteName: "Guido Genzone",
-  author: "Guido Genzone",
-  publishedTime: "2024-07-03",
-  modifiedTime: "2024-07-04",
-  tags: ["astro", "seo", "ejemplo"]
+  siteName: blog.title,
+  author: frontmatter.author,
+  publishedTime: frontmatter.date.toISOString(),
+  modifiedTime: frontmatter.date.toISOString(),
+  tags: frontmatter.tags
 };
 ---
 

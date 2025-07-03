@@ -17,12 +17,12 @@ export async function getStaticPaths() {
 }
 
 const { tag } = Astro.params;
-const { posts } = Astro.props;
+const { posts, url  } = Astro.props;
 
 const meta = {
   title: tag,
   description: "Descripción breve del artículo.",
-  url: "https://ggenzone.github.io/bitacora2/posts/ejemplo/",
+  url: url.href,
   image: "https://ggenzone.github.io/bitacora2/posts/ejemplo/cover.png",
   type: "article",
   siteName: "Guido Genzone",

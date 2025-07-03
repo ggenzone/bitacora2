@@ -7,12 +7,11 @@ import Header from "../components/astro/header.astro"
 const defaultSidebarOpen = Astro.cookies.get('sidebar:state')?.value === 'true';
 const { title } = Astro.props
 
+
+
 const meta = {
   title: title,
   description: "Descripción breve del artículo.",
-  url: "https://ggenzone.github.io/bitacora2/posts/ejemplo/",
-  image: "https://ggenzone.github.io/bitacora2/posts/ejemplo/cover.png",
-  type: "article",
   siteName: "Guido Genzone",
   author: "Guido Genzone",
   publishedTime: "2024-07-03",
