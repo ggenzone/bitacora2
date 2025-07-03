@@ -19,9 +19,22 @@ export async function getStaticPaths() {
 const { tag } = Astro.params;
 const { posts } = Astro.props;
 
+const meta = {
+  title: tag,
+  description: "Descripción breve del artículo.",
+  url: "https://ggenzone.github.io/bitacora2/posts/ejemplo/",
+  image: "https://ggenzone.github.io/bitacora2/posts/ejemplo/cover.png",
+  type: "article",
+  siteName: "Guido Genzone",
+  author: "Guido Genzone",
+  publishedTime: "2024-07-03",
+  modifiedTime: "2024-07-04",
+  tags: ["astro", "seo", "ejemplo"]
+};
+
 //const filteredPosts = posts.filter((post: any) => post.frontmatter.tags?.includes(tag));
 ---
-<MainLayout pageTitle={tag}>
+<MainLayout meta={meta}>
   <ul>
     {posts.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
   </ul>

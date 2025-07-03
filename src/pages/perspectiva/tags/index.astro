@@ -9,9 +9,22 @@ const allPosts = await latestPosts("perspectiva");
 
 const tags = [...new Set(allPosts.map((post: any) => post.data.tags).flat())];
 const pageTitle = "Tag Index";
+
+const meta = {
+  title: pageTitle,
+  description: "Descripción breve del artículo.",
+  url: "https://ggenzone.github.io/bitacora2/posts/ejemplo/",
+  image: "https://ggenzone.github.io/bitacora2/posts/ejemplo/cover.png",
+  type: "article",
+  siteName: "Guido Genzone",
+  author: "Guido Genzone",
+  publishedTime: "2024-07-03",
+  modifiedTime: "2024-07-04",
+  tags: ["astro", "seo", "ejemplo"]
+};
 ---
 
-<MainLayout title="Tags">
+<MainLayout meta={meta}>
   <div>
     {tags.map((tag) => (
       <p><a href={`/bitacora/tags/${tag}`}>{tag}</a></p>
