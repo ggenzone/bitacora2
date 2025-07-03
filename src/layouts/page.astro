@@ -1,17 +1,30 @@
 ---
 import '../styles/global.css';
 import MainLayout from './main.astro';
-import Page from "../app/page.tsx"
-import ThemeIcon from '../components/theme-icon.astro';
+import Header from "../components/astro/header.astro"
 
 // if you want to use the sidebar cookie
 const defaultSidebarOpen = Astro.cookies.get('sidebar:state')?.value === 'true';
 const { title } = Astro.props
+
+const meta = {
+  title: title,
+  description: "Descripción breve del artículo.",
+  url: "https://ggenzone.github.io/bitacora2/posts/ejemplo/",
+  image: "https://ggenzone.github.io/bitacora2/posts/ejemplo/cover.png",
+  type: "article",
+  siteName: "Guido Genzone",
+  author: "Guido Genzone",
+  publishedTime: "2024-07-03",
+  modifiedTime: "2024-07-04",
+  tags: ["astro", "seo", "ejemplo"]
+};
 ---
 
 
-<MainLayout title={title} >
-    <Page client:load defaultSidebarOpen={defaultSidebarOpen}>
+<MainLayout meta={meta} >
+    <div className="min-h-screen bg-baground text-foreground ">
+        <Header />
         <slot>
-    </Page>
+    </div>
 </MainLayout>

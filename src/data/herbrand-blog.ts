@@ -1,23 +1,27 @@
-import { type Blog } from "./blog";
+import { baseUrl } from "@/config/site";
+import { type Blog } from "@/types/blog";
 import {
   HomeIcon,
-  BookOpenIcon,
+  TagIcon,
 } from "lucide-react"
+
+export const getRelativeBaseUrl = (path: string) => `${baseUrl}/herbrand${path}`;
 
 export const blog: Blog = {
     title: "Herbrand",
     description: "Cuaderno",
-    image: "/bitacora/perspectiva/perspectiva.png",
+    rss: getRelativeBaseUrl('/rss.xml'),
+    image: getRelativeBaseUrl('herbrand.png'),
     menu: [
       {
         name: "Home",
-        url: "/bitacora2/herbrand",
+        url: getRelativeBaseUrl(''),
         icon: HomeIcon,
       },
       {
           name: "Tags",
-          url: "/bitacora2/herbrand/tags",
-          icon: HomeIcon,
+          url: getRelativeBaseUrl('/tags'),
+          icon: TagIcon,
       }
     ]
 };

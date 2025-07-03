@@ -1,32 +1,36 @@
-import { type Blog } from "./blog";
+import { baseUrl } from "@/config/site";
+import { type Blog } from "@/types/blog";
 import {
   HomeIcon,
   BookOpenIcon,
 } from "lucide-react"
 
+export const getRelativeBaseUrl = (path: string) => `${baseUrl}/prototipo${path}`;
+
 export const blog: Blog = {
     title: "Prototipo",
     description: "Cuaderno",
-    image: "/bitacora/perspectiva/perspectiva.png",
+    rss: getRelativeBaseUrl('/rss.xml'),
+    image: getRelativeBaseUrl("perspectiva.png"),
     menu: [
       {
         name: "Home",
-        url: "/bitacora2/prototipo",
+        url: getRelativeBaseUrl(""),
         icon: HomeIcon,
       },
       {
           name: "Inventario",
-          url: "/bitacora2/prototipo/inventario",
+          url: getRelativeBaseUrl("/inventario"),
           icon: HomeIcon,
       },
       {
         name: "Microcontroladores",
-        url: "/bitacora2/prototipo/microcontroladores",
+        url: getRelativeBaseUrl("/microcontroladores"),
         icon: HomeIcon
       },
       {
         name: "Recursos",
-        url: "/bitacora2/prototipo/recursos",
+        url: getRelativeBaseUrl("/recursos"),
         icon: BookOpenIcon
       }
     ]

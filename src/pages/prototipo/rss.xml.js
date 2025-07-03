@@ -1,3 +1,4 @@
+import { getRelativeBaseUrl } from '@/data/prototipo-blog';
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 
@@ -13,7 +14,7 @@ export async function GET(context) {
       title: post.data.title,
       pubDate: post.data.pubDate,
       description: post.data.description,
-      link: `/bitacora/prototipo/${post.id}/`,
+      link: getRelativeBaseUrl(`/${post.id}/`),
     })),
     customData: `<language>es-ES</language>`,
   });

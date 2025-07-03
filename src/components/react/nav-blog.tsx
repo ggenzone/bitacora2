@@ -3,17 +3,15 @@ import {
   SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
-  SidebarMenuItem,
-  useSidebar,
+  SidebarMenuItem
 } from "@/components/ui/sidebar"
-import type { Menu } from "@/data/blog"
+import type { Menu } from "@/types/blog"
 
 export function NavBlog({
   menu,
 }: {
   menu: Menu[]
 }) {
-  const { isMobile } = useSidebar()
 
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">

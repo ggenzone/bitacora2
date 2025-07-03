@@ -1,23 +1,27 @@
-import { type Blog } from "./blog";
+import { baseUrl } from "@/config/site";
+import { type Blog } from "@/types/blog";
 import {
   HomeIcon,
-  BookOpenIcon,
+  TagIcon,
 } from "lucide-react"
+
+export const getRelativeBaseUrl = (path: string) => `${baseUrl}/decadencia${path}`;
 
 export const blog: Blog = {
     title: "Decadencia",
     description: "Cuaderno",
-    image: "/bitacora2/perspectiva/perspectiva.png",
+    rss: getRelativeBaseUrl('/rss.xml'),
+    image: getRelativeBaseUrl('/decadencia.png'),
     menu: [
       {
         name: "Home",
-        url: "/bitacora2/decadencia",
+        url: getRelativeBaseUrl(''),
         icon: HomeIcon,
       },
       {
           name: "Tags",
-          url: "/bitacora2/decadencia/tags",
-          icon: HomeIcon,
+          url: getRelativeBaseUrl('/tags'),
+          icon: TagIcon,
       }
     ]
 };

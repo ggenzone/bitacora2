@@ -1,6 +1,6 @@
-import { AppSidebar } from "@/components/app-sidebar"
-import { SiteHeader } from "@/components/site-header"
-import { type Blog } from "@/data/blog"
+import { AppSidebar } from "@/components/react/app-sidebar"
+import { SiteHeader } from "@/components/react/site-header"
+import { type Blog } from "@/types/blog"
 import { type ReactNode } from "react"
 import {
   SidebarInset,
